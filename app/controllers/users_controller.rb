@@ -12,9 +12,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    # 実装は終わっていないことに注意!
+    @user = User.new(user_params)
+    random_password = SecureRandom.hex(16)
+    @user.password = random_password
+    @user.password_confirmation = random_password
     if @user.save
-      log_in @user
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else

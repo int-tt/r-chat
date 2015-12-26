@@ -17,7 +17,7 @@
         </div>
       </div>
       <div id="room">
-        <p class="items">Rooms(<%= count (@rooms) %>)  <a href="creatRoom.html" style="text-decoration: none; color: #fff;">⊕</a></p>
+        <p class="items">Rooms(<%= @rooms.length %>)  <a href="creatRoom.html" style="text-decoration: none; color: #fff;">⊕</a></p>
         <ul>
           <% @rooms.each do |room| %>
               <li><a href="#"><%= room.room_name %></a></li>
@@ -25,7 +25,7 @@
         </ul>
       </div>
       <div id="member">
-        <p class="items">Member(<%= count (@users) %>)</p>
+        <p class="items">Member(<%= @users.length %>)</p>
         <ul>
           <% @users.each do |user| %>
             <li><a href="#"><%= user.name %></a></li>

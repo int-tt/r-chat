@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151226204208) do
+ActiveRecord::Schema.define(version: 20151226212943) do
 
   create_table "messages", force: :cascade do |t|
     t.integer  "to_user_id"
@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(version: 20151226204208) do
     t.string   "email"
     t.string   "password_digest"
     t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "remember_digest"
+    t.boolean  "enable",          default: false, null: false
   end
 
 end

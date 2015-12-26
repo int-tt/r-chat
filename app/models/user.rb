@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   # ランダムなトークンを返す
-  def User.new_token
+  def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
