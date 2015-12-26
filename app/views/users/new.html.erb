@@ -1,4 +1,12 @@
-<div id="users">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>signup| R-chat</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/sign.css" />
+  <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+</head>
+<body>
 <div id="wrap">
   <div id="header" align="center" style="margin-top: 30px">
     <img src="asset/images/logo.png">
@@ -6,22 +14,23 @@
   <div id="content">
     <div class="form-wrapper">
       <h1>Sign Up</h1>
-      <%= form_for(@user) do |f| %>
+      <form>
         <div class="form-item">
           <label for="username"></label>
-          <%= f.text_field :name, id:"username", placeholder:"UserName" %>
+          <input type="text" name="username" id="username" required="required" placeholder="UserName">
         </div>
         <div class="form-item">
           <label for="email"></label>
-          <%= f.password_field :email, id:"email", placeholder:"Email Address" %>
+          <input type="email" name="email" id="email" required="required" placeholder="Email Address">
         </div>
         <div class="button-panel">
-          <%= f.submit "Sign Up", class: "btn btn-primary", value:"Sign Up" %>
+          <input type="submit" class="button" title="Sign Up" value="Sign Up">
         </div>
-      <% end %>
+      </form>
       <br>
       <br>
     </div>
   </div>
 </div>
-</div>
+</body>
+</html>
