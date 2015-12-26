@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'message/create'
+
   get 'sessions/new'
 
   root 'home#index'
