@@ -1,4 +1,7 @@
 class RoomController < ApplicationController
+  def new
+  end
+
   def create
     @room = Room.new(message_params)
 
