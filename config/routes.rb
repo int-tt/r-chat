@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
-  root 'home#index'
+	
+ # get 'chat/index'
+  root 'chat#index'
   get 'signup'  => 'users#new'
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
