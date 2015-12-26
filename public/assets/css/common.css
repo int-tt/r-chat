@@ -1,0 +1,90 @@
+#wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+#wrap #left {
+  height: 100%;
+  width: 17%;
+  color: #ab9ba9;
+  float: left;
+  background-color: #4d394b;
+}
+#wrap #right {
+  height: 100%;
+  width: 83%;
+  float: right;
+}
+#wrap #right .inner {
+  height: 100%;
+  margin: 5px 20px;
+}
+#wrap #right .inner #messages {
+  margin-bottom: 10px;
+  height: 87%;
+  overflow: scroll;
+}
+#wrap #right .inner #messages .message img {
+  width: 36px;
+  float: left;
+  border-radius: 3px;
+  border: solid 1px #ccc;
+}
+#wrap #right .inner #messages .message div {
+  margin-left: 50px;
+}
+#wrap #right .inner #messages .message div .messageInfo {
+  font-weight: bold;
+}
+#wrap #right .inner #messages .message div .messageInfo span {
+  font-weight: normal;
+  color: #aaa;
+  font-size: 80%;
+}
+#wrap #right .inner #messages .message div .messageBody {
+  font-size: 15px;
+  line-height: 12px;
+}
+#wrap #right .inner #form {
+  height: 13%;
+}
+#wrap #right .inner #form textarea {
+  width: 98%;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px #4d394b;
+}
+#wrap .inner {
+  margin: 20px;
+}
+#wrap .inner .items {
+  color: #fff;
+}
+#wrap .inner #userInfo {
+  margin-bottom: 30px;
+}
+#wrap .inner #room {
+  margin-bottom: 30px;
+}
+#wrap .inner ul {
+  height: 300px;
+  overflow: scroll;
+}
+#wrap .inner ul li {
+  padding: 5px;
+  border-radius: 5px;
+}
+#wrap .inner ul li:hover {
+  cursor: pointer;
+  background-color: #000;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#wrap .stateOnline {
+  color: aquamarine;
+  font-size: 70%;
+}
