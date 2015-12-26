@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 20151226191848) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "to_user_id"
-    t.integer  "from_user_id"
-    t.string   "message"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
