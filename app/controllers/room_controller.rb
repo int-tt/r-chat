@@ -7,17 +7,22 @@ class RoomController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_params)
+    userId = 2
+    roomName = params[:roomName]
+    members = params[:members]
 
-    respond_to do |format|
-      if @room.save
-        format.html { redirect_to @room, notice: 'Test was successfully created.' }
-        format.json { render :show, status: :created, location: @room }
-      else
-        format.html { render :new }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
+
+    room = Room.create(:room_name => roomName, :create_user_id => userId)
+
+    unless room.new_record?
+      id = room.id
+      members.each do |member|
+        RoomMember.create(:room_id => id, :user_id => userId)
       end
+    else
+
     end
+  render :text => "aaa"
   end
 
   def show
