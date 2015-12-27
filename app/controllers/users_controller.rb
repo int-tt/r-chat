@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # before_action :signed_in_user,
+  #               only: [:index]
+
   def index
     @user = User.all
   end

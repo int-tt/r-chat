@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   # ルームの登録など
   resources :room,    only:["new", "create"]
 
-
   # ユーザーの登録など
   resources :users,   only:["index", "show", "new", "create"]
 

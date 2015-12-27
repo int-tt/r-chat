@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       sign_in user
       # remember user
-      redirect_to user
+      redirect_to controller: 'chat', action: 'index'
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      # flash.now[:danger] = 'Invalid email/password combination'
+      redirect_to '/'
     end
   end
 
