@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
@@ -14,12 +14,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     random_password = SecureRandom.hex(16)
+    @password = random_password
     @user.password = random_password
     @user.password_confirmation = random_password
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      render 'show'
     else
       render 'new'
     end

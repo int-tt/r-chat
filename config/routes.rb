@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get    'app'     => 'chat#index'
 
+  match 'private(/:userId)' => 'chat#private',via: [:get]
+
 
   # メッセージの登録など
   resources :message, only:["create"]

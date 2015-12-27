@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   def index
     if signed_in?
       room_id = 0
-      # @rooms =
+      @rooms = Room.all
+      @user = User.all
       @room_messages = Room.find(to_room_id)
       @messages = Message.all
     else

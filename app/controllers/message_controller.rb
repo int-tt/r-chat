@@ -1,11 +1,6 @@
 class MessageController < ApplicationController
   before_action :signed_in_user,
                 only: [:create, :show]
-
-
-
-
-
   def create
     @message = Message.new
     @message.user_id = current_user.id

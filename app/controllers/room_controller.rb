@@ -1,7 +1,4 @@
 class RoomController < ApplicationController
-  before_action :signed_in_user,
-                only: [:new, :create, :show]
-
   def new
     @users = User.all
   end
@@ -12,7 +9,7 @@ class RoomController < ApplicationController
     members = params[:members]
 
 
-    room = Room.create(:room_name => roomName, :create_user_id => userId)
+    room = Room.create(:room_name => roomName, :created_user_id => userId)
 
     unless room.new_record?
       id = room.id
@@ -22,7 +19,7 @@ class RoomController < ApplicationController
     else
 
     end
-  render :text => "aaa"
+    redirect_to app_path
   end
 
   def show

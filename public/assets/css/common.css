@@ -10,6 +10,7 @@
   float: left;
   background-color: #4d394b;
 }
+
 #wrap #right {
   height: 100%;
   width: 83%;
@@ -67,7 +68,7 @@
   margin-bottom: 30px;
 }
 #wrap .inner #room {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 #wrap .inner ul {
   height: 300px;
@@ -78,6 +79,7 @@
   border-radius: 5px;
 }
 #wrap .inner ul li a{
+  display: block;
   text-decoration: none;
   color: #ab9ba9;
 }
@@ -94,4 +96,8 @@
 #wrap .stateOnline {
   color: aquamarine;
   font-size: 70%;
+}
+
+#wrap #left #toUser a{
+ color: #fff;
 }

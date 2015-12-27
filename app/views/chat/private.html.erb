@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>| R-chat</title>
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/common.css">
   <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
 </head>
-
-
-
-
-
 <body>
 <div id="wrap">
   <div id="left">
@@ -34,9 +29,9 @@
         <p class="items">Member(<%= @users.length %>)</p>
         <ul>
          <% @users.each do |user| %>
-              <% if @toUser == user.name %>
-                  <li id="toUser"><%= link_to user.name, "/private/" + user.name %></a></li>
-              <% else %>
+          <% if @toUser == user.name %>
+           <li id="toUser"><%= link_to user.name, "/private/" + user.name %></a></li>
+          <% else %>
                   <li><%= link_to user.name, "/private/" + user.name %></a></li>
               <% end %>
          <% end %>
@@ -77,7 +72,7 @@
 
   Notification.requestPermission(function(selectedPermission) {
     permission = selectedPermission;
-    });
+  });
   // メッセージ受信時の処理
   ws_rails.bind("websocket_chat", function(resArray){
     var message_li = document.createElement("li");
@@ -97,66 +92,65 @@
   })
 
 
-$(document).on("keypress", "#message-text", function(e) {
+  $(document).on("keypress", "#message-text", function(e) {
     if (e.keyCode == 13) { // Enterが押された
-        if (e.shiftKey) { // Shiftキーも押された
-            $.noop();
-        } else if ($ta.val().replace(/\s/g, "").length > 0) {
-            e.preventDefault();
-						var comment = $ta.val()
-          var d = new Date();
-          var fruits = ['<%= @name %>', comment,d];
-            ws_rails.trigger("websocket_chat", fruits);
-						$ta.val("")
-          $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
-        }
-    } else {
+      if (e.shiftKey) { // Shiftキーも押された
         $.noop();
+      } else if ($ta.val().replace(/\s/g, "").length > 0) {
+        e.preventDefault();
+        var comment = $ta.val()
+        var d = new Date();
+        var fruits = ['<%= @name %>', comment,d];
+        ws_rails.trigger("websocket_chat", fruits);
+        $ta.val("")
+        $('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 'fast');
+      }
+    } else {
+      $.noop();
     }
-});
-
-function createMessage(name, created_at, message){
-  $wrapDiv = $('<div>').attr({
-    class: 'message'
   });
 
-  $img = $('<img>').attr({
-    src: 'https://i1.wp.com/slack.global.ssl.fastly.net/66f9/img/avatars/ava_0025-48.png?ssl=1',
-    height: '36px;',
-    width: '36px;'
-  });
+  function createMessage(name, created_at, message){
+    $wrapDiv = $('<div>').attr({
+      class: 'message'
+    });
 
-  $messageDiv = $('<div>');
-  $messageInfo = $('<p>').attr({
-    class: 'messageInfo',
-  }).html(name + ' <span>' + created_at + '</span>');
-  $message = $('<pre>').attr({
-    class: 'messageBody'
-  }).html(escapeHTML2(message));
+    $img = $('<img>').attr({
+      src: 'https://i1.wp.com/slack.global.ssl.fastly.net/66f9/img/avatars/ava_0025-48.png?ssl=1',
+      height: '36px;',
+      width: '36px;'
+    });
 
-  $messageDiv.append($messageInfo);
-  $messageDiv.append($message);
+    $messageDiv = $('<div>');
+    $messageInfo = $('<p>').attr({
+      class: 'messageInfo',
+    }).html(name + ' <span>' + created_at + '</span>');
+    $message = $('<pre>').attr({
+      class: 'messageBody'
+    }).html(escapeHTML2(message));
 
-  $crear = $('<div>').attr({
-    style: 'clear: both;',
-  });
+    $messageDiv.append($messageInfo);
+    $messageDiv.append($message);
 
-  $wrapDiv.append($img);
-  $wrapDiv.append($messageDiv);
-  $wrapDiv.append($crear);
+    $crear = $('<div>').attr({
+      style: 'clear: both;',
+    });
 
-  return $wrapDiv;
-}
+    $wrapDiv.append($img);
+    $wrapDiv.append($messageDiv);
+    $wrapDiv.append($crear);
 
+    return $wrapDiv;
+  }
   // HTMLエスケープ - jQueryを使うと一行で書ける
   function escapeHTML2(html) {
     return jQuery('<div>').text(html).html();
   }
 
   // メッセージ送信時の処理
-//  document.getElementById("send").onclick =  function(){
-//    var comment = document.getElementById("comment").value;
-//    ws
+  //  document.getElementById("send").onclick =  function(){
+  //    var comment = document.getElementById("comment").value;
+  //    ws
 </script>
 </body>
 </html>
