@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
   get    'app'     => 'chat#index'
 
-  # ルームの登録など
-  resources :room,    only:["new", "create"]
 
   # メッセージの登録など
   resources :message, only:["create"]
+  # ルームの登録など
+  resources :room,    only:["new", "create"]
+
 
   # ユーザーの登録など
   resources :users,   only:["index", "show", "new", "create"]

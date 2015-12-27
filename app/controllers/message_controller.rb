@@ -1,6 +1,16 @@
 class MessageController < ApplicationController
+  before_action :signed_in_user,
+                only: [:create, :show]
+
+
+
+
+
   def create
-    @message = Message.new(message_params)
+    @message = Message.new
+    @message.user_id = current_user.id
+    @message.to_user_id = params[:to_user_id]
+    @message.message = params[:message]
 
     respond_to do |format|
       if @message.save
@@ -13,11 +23,7 @@ class MessageController < ApplicationController
     end
   end
 
-  def get_user_messages
-
-  end
-
-  def get_room_messages
+  def show
 
   end
 

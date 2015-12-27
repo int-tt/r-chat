@@ -1,4 +1,7 @@
 class RoomController < ApplicationController
+  before_action :signed_in_user,
+                only: [:new, :create, :show]
+
   def new
     @users = User.all
   end
@@ -15,6 +18,10 @@ class RoomController < ApplicationController
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+
   end
 
   private
