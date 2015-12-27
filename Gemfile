@@ -34,6 +34,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'json', '~> 1.8.3'
+
+gem 'websocket-rails'
+gem 'faye-websocket', '0.10.0'
 group :development, :test  do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '3.4.0'

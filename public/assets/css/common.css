@@ -24,6 +24,9 @@
   height: 87%;
   overflow: scroll;
 }
+#wrap #right .inner #messages .message{
+  margin-bottom: 10px;
+}
 #wrap #right .inner #messages .message img {
   width: 36px;
   float: left;
@@ -73,6 +76,10 @@
 #wrap .inner ul li {
   padding: 5px;
   border-radius: 5px;
+}
+#wrap .inner ul li a{
+  text-decoration: none;
+  color: #ab9ba9;
 }
 #wrap .inner ul li:hover {
   cursor: pointer;

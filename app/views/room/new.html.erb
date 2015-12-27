@@ -17,14 +17,13 @@
   <div id="content">
     <div id="form">
       <h1>Create New Room</h1>
-      <form action="">
+      <form action="create" method="post">
         <input type="text" name="roomName" id="roomName" placeholder="Room Name">
         <div id="selectBox">
-          <select id="select">
-            <option value="1">foo</option>
-            <option value="2">bar</option>
-            <option value="3">baz</option>
-            <option value="4">qux</option>
+          <select id="select" name="menbers[]">
+            <% @users.each do |user| %>
+            <option value="<%= @user.id  %>"><%= @user.name %></option>
+            <% end %>
           </select>
         </div>
         <button type="submit" id="submit">Create</button>

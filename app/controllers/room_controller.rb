@@ -1,6 +1,6 @@
 class RoomController < ApplicationController
   def new
-    @room = Room.new
+    @users = User.all
   end
 
   def create
