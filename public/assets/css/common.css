@@ -24,6 +24,9 @@
   height: 87%;
   overflow: scroll;
 }
+#wrap #right .inner #messages .message{
+  margin-bottom: 10px;
+}
 #wrap #right .inner #messages .message img {
   width: 36px;
   float: left;
