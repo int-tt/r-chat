@@ -1,2 +1,37 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>signin| R-chat</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/sign.css" />
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header" align="center" style="margin-top: 30px">
+        <img src="/assets/images/logo.png">
+    </div>
+    <div id="content">
+        <div class="form-wrapper">
+            <h1>Sign In</h1>
+
+            <%= form_tag('/login', :method =>:post) do %>
+                <div class="form-item">
+                    <label for="email"></label>
+                    <%= text_field :email, id:"email", placeholder:"Email Address" %>
+                </div>
+                <div class="form-item">
+                    <label for="password"></label>
+                    <%= password_field :email, id:"password", placeholder:"Password" %>
+                </div>
+                <div class="button-panel">
+                    <input type="submit" class="button signin" title="Sign In" value="Sign In">
+                </div>
+            <% end %>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
