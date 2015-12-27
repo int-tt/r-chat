@@ -74,6 +74,10 @@
   padding: 5px;
   border-radius: 5px;
 }
+#wrap .inner ul li a{
+  text-decoration: none;
+  color: #ab9ba9;
+}
 #wrap .inner ul li:hover {
   cursor: pointer;
   background-color: #000;

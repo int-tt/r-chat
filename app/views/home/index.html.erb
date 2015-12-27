@@ -28,7 +28,7 @@
         <p class="items">Member(<%= @users.length %>)</p>
         <ul>
           <% @users.each do |user| %>
-            <li><a href="#"><%= user.name %></a></li>
+              <li><%= link_to @user.name, '/message/' + @user.user_id %></li>
           <% end %>
         </ul>
       </div>
