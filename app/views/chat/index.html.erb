@@ -124,7 +124,7 @@ function createMessage(name, created_at, message){
   $messageInfo = $('<p>').attr({
     class: 'messageInfo',
   }).html(name + ' <span>' + created_at + '</span>');
-  $message = $('<p>').attr({
+  $message = $('<pre>').attr({
     class: 'messageBody'
   }).html(message);
 
