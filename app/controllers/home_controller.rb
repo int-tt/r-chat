@@ -13,7 +13,5 @@ class HomeController < ApplicationController
   def show
     to_user_id = params[:to_user_id]
     to_room_id = params[:to_room_id]
-
-
   end
 end
