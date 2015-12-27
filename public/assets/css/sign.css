@@ -84,9 +84,11 @@ form {
   background: #ee004a;
 }
 
-.button-panel .signin .button:hover {
+.button-panel .signin:hover {
   background: #2dee29;
 }
+
+
 
 .form-footer {
   font-size: 1em;
