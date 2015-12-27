@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- # get 'chat/index'
+
   root "sessions#new"
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
